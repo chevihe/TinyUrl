@@ -1,7 +1,6 @@
 import express from "express";
 import LinkController from "../Controllers/LinkController.js"
 
-
 const LinkRouter = express.Router();
 
 LinkRouter.get("/", LinkController.getList);

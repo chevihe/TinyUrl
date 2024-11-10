@@ -11,11 +11,10 @@ import AdvertiserRouter from './Routers/AdvertiserRouter.js';
 
 connectDB();
 const app = express()
-//const ip = require('express-ip');
 
 app.use(cors());
 app.use(bodyParser.json());
-//app.use(ip());
+
 app.get('/', (req, res) => {
   res.send('Hellhgjhgo World!')
 })

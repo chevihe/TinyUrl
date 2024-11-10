@@ -1,5 +1,4 @@
 import LinkModel from "../Models/LinkModel.js";
-// import { updateLinkAndAddClick } from "../Models/LinkModel.js";
 const AdvertiserController = {
   getById: async (req, res) => {
     const link = await LinkModel.findById(req.params.id);

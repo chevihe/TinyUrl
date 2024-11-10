@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const ClickSchema = new mongoose.Schema({
-  insertedAt: { type: Date, default: Date.now },  // זמן הקליק
+  insertedAt: { type: Date, default: Date.now },
   ipAddress: { type: String} ,
   targetParamValue:{type: String} 
 });
@@ -18,7 +18,6 @@ const LinkSchema = new mongoose.Schema({
 
 const Link = mongoose.model("Link", LinkSchema);
 
-// פונקציה שמעדכנת לינק ומוסיפה קליק חדש
 const updateLinkAndAddClick = async (id,ip,target) => {
   try {
     const link = await Link.findById(id);
@@ -34,11 +33,7 @@ const updateLinkAndAddClick = async (id,ip,target) => {
     } else {
       link.targetParamValue.push({ name: target, value: 1 });
     }
-
     await link.save();
-
-  
-
   } catch (error) {
     console.error(error);
     throw error;
